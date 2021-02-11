@@ -20,14 +20,16 @@ $result = mysqli_query($conn, $query);
 </head>
 <body>
     <div class="container">
-    <?php echo "<h1>Groupe 5 ESGI DOCKER</h1>"; ?>
+    <?php echo "<h1><center>Groupe 5 ESGI Projet DOCKER</center></h1>";
+          echo "<h3><center>Voici la liste des utilisateurs:</center></h3>"; ?>
 
     <?php
-    echo '<table class="table table-striped" border="1" width="400">';
-    echo '<thead><tr><th>N°</th><th>PRENOM</th></tr></thead>';
+    echo '<table class="table table-striped" border="1" width="300">';
+    echo '<thead><tr><th>N°</th><th>PRENOM</th><th>NOM</th></tr></thead>';
     while($value = $result->fetch_array(MYSQLI_ASSOC)){
         echo '<tr>';
-           foreach($value as $element){
+       
+        foreach($value as $element){
             echo '<td>' . $element . '</td>';
         }
 
