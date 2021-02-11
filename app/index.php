@@ -15,7 +15,7 @@ $result = mysqli_query($conn, $query);
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
   <style>body{font-family:Nunito,sans-serif;min-height:90vh;align-items:center;justify-content:center;display:flex}</style>
 </head>
-
+<!-- --Pas trop sûr  -->
 <body>
   <p>
     <?php
