@@ -1,7 +1,7 @@
 <?php
 $conn = mysqli_connect('db', 'user', 'test', 'testdatabase', 3306);
 mysqli_set_charset($conn, "utf8");
-$query = 'SELECT * From Personne';
+$query = 'SELECT * From Users';
 $result = mysqli_query($conn, $query);
 ?>
 
@@ -24,8 +24,8 @@ $result = mysqli_query($conn, $query);
           echo "<h3><center>Voici la liste des utilisateurs:</center></h3>"; ?>
 
     <?php
-    echo '<table class="table table-striped" border="1" width="300">';
-    echo '<thead><tr><th>N°</th><th>PRENOM</th><th>NOM</th></tr></thead>';
+    echo '<table class="table table-striped" border="3">';
+    echo '<thead><tr><th>N°</th><th>PRENOM</th><th>NOM</th><th>PASSWORD</th></tr></thead>';
     while($value = $result->fetch_array(MYSQLI_ASSOC)){
         echo '<tr>';
        
@@ -42,6 +42,15 @@ $result = mysqli_query($conn, $query);
     mysqli_close($conn);
 
     ?>
+    </div>
+
+    <div>
+	</br>
+	    <P>
+            <center>
+                <a href="inscription.php" class="btn btn-primary btn-lg active" role="button">Cliquez ici pour vous inscrire</a>
+            </center>
+        </P>
     </div>
 </body>
 </html>
