@@ -7,28 +7,39 @@ $result = mysqli_query($conn, $query);
 
 <!DOCTYPE html>
 <html lang="en">
+<html>
+ <head>
+  <title>Groupe 5</title>
 
-<head>
-  <meta charset="utf-8">
-  <title>Les utilisateurs</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-  <style>body{font-family:Nunito,sans-serif;min-height:90vh;align-items:center;justify-content:center;display:flex}</style>
+  <meta charset="utf-8"> 
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 </head>
-<!-- --Pas trop sûr  -->
 <body>
-  <p>
-    <?php
-    while ($value = $result->fetch_array(MYSQLI_ASSOC)) {
-      foreach ($value as $element) {
-        echo ' - ' . $element;
-      }
-    }
-    $result->close();
-    mysqli_close($conn);
-    ?>
-    -
-  </p>
-</body>
+    <div class="container">
+    <?php echo "<h1>Groupe 5 ESGI DOCKER</h1>"; ?>
 
+    <?php
+    echo '<table class="table table-striped" border="1" width="400">';
+    echo '<thead><tr><th>N°</th><th>PRENOM</th></tr></thead>';
+    while($value = $result->fetch_array(MYSQLI_ASSOC)){
+        echo '<tr>';
+           foreach($value as $element){
+            echo '<td>' . $element . '</td>';
+        }
+
+        echo '</tr>';
+    }
+    echo '</table>';
+
+    $result->close();
+
+    mysqli_close($conn);
+
+    ?>
+    </div>
+</body>
 </html>
